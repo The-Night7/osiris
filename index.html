@@ -381,6 +381,35 @@
             padding: 2rem;
         }
 
+        /* Audio Control */
+        .audio-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(145deg, rgba(20,20,20,0.8), rgba(40,30,10,0.8));
+            border: 1px solid var(--osiris-gold);
+            color: var(--osiris-gold);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .audio-control:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+        }
+
+        .audio-control i {
+            font-size: 1.5rem;
+        }
+
         @media (max-width: 768px) {
             .team-name { font-size: 2.5rem; letter-spacing: 3px; }
             .players-grid { grid-template-columns: 1fr; }
@@ -391,6 +420,16 @@
 <body>
 
 <div class="sand-overlay"></div>
+
+<!-- Audio -->
+<audio id="backgroundMusic" loop preload="auto">
+    <source src="ost.mp3" type="audio/mp3">
+</audio>
+
+<!-- Audio Control Button -->
+<div class="audio-control" id="audioControl">
+    <i class="fas fa-play" id="audioIcon"></i>
+</div>
 
 <!-- Header -->
 <header class="header">
@@ -414,16 +453,16 @@
         </h2>
         <div class="backstory-content">
             <p>Une équipe venue des sables, utilisant des techniques liées aux ombres, au destin et à l'énergie spirituelle.</p>
-            
+
             <p>L'équipe d'Osiris, qui avait disparu dans les limbes du football, refait surface. D'abord inconnue aux yeux du monde, cette équipe mythique a marqué les esprits par ses joueurs d'exception et son style de jeu impitoyable. Leur spécialité : l'usage de techniques interdites et des pouvoirs qui défient les lois du football.</p>
-            
+
             <p>Lors d'un tournoi international, leur leader apparaît soudainement avec un message : <em>"Nous sommes la dernière évolution du football. L'heure de la domination d'Osiris a sonné."</em></p>
-            
+
             <p>Après une finale titanesque contre le lycée Raimon, l'équipe d'Osiris comprend que la véritable force ne réside pas dans la manipulation des ombres ou des techniques interdites, mais dans la camaraderie, l'effort collectif, et le respect du jeu.</p>
-            
+
             <p><strong>De ce fait, elle renaît de ses cendres désormais comme un Phénix.</strong></p>
         </div>
-        
+
         <div class="backstory-features">
             <div class="feature-item">
                 <div class="feature-icon"><i class="fas fa-tshirt"></i></div>
@@ -512,7 +551,7 @@
                 <div class="player-name">Aina Lawell</div>
                 <div class="player-role">Milieu · Miximax</div>
             </div>
-            
+
             <div class="player-card" data-player="rudeus">
                 <div class="card-header">
                     <span class="player-position">Milieu Offensif</span>
@@ -645,6 +684,9 @@
                 card.style.transform = 'translateY(0)';
             }, index * 100);
         });
+
+        // Tentative de lecture automatique de la musique
+        tryPlayMusic();
     });
 
     // Modal
@@ -652,6 +694,50 @@
     const modalTitle = document.getElementById('modalTitle');
     const modalBody = document.getElementById('modalBody');
     const closeBtn = document.getElementById('modalClose');
+
+    // Gestion de l'audio
+    const music = document.getElementById('backgroundMusic');
+    const audioControl = document.getElementById('audioControl');
+    const audioIcon = document.getElementById('audioIcon');
+
+    function tryPlayMusic() {
+        // Essayer de jouer l'audio dès le chargement (pourrait être bloqué par le navigateur)
+        let playPromise = music.play();
+
+        if (playPromise !== undefined) {
+            playPromise.then(() => {
+                // Auto-play réussi
+                audioIcon.classList.remove('fa-play');
+                audioIcon.classList.add('fa-pause');
+            }).catch(error => {
+                // Auto-play bloqué par le navigateur
+                console.log("Lecture automatique bloquée par le navigateur. Cliquez sur le bouton pour jouer la musique.");
+                music.pause();
+                audioIcon.classList.add('fa-play');
+                audioIcon.classList.remove('fa-pause');
+            });
+        }
+    }
+
+    // Contrôle de l'audio avec le bouton
+    audioControl.addEventListener('click', () => {
+        if (music.paused) {
+            music.play();
+            audioIcon.classList.remove('fa-play');
+            audioIcon.classList.add('fa-pause');
+        } else {
+            music.pause();
+            audioIcon.classList.add('fa-play');
+            audioIcon.classList.remove('fa-pause');
+        }
+    });
+
+    // Permettre la lecture de l'audio après une interaction avec la page
+    document.addEventListener('click', function() {
+        if (music.paused) {
+            tryPlayMusic();
+        }
+    }, { once: true });
 
     // Données des joueurs (à personnaliser)
     const playersData = {
@@ -704,7 +790,7 @@
         card.addEventListener('click', () => {
             const playerId = card.getAttribute('data-player');
             const player = playersData[playerId];
-            
+
             if (player) {
                 modalTitle.textContent = player.name;
                 modalBody.innerHTML = `
