@@ -733,17 +733,21 @@
     <!-- POSTES VACANTS -->
     <h2 class="section-title">Postes Disponibles</h2>
     <div class="players-grid">
-        <div class="player-card" data-player="kryo">
+        <div class="player-card" data-player="kryo" data-element="wind">
             <div class="card-header">
-                <span class="player-position">Milieu Offensif</span>
+                <span class="player-position">Meneur de jeu [Remplaçant]</span>
                 <span class="player-number">07</span>
             </div>
             <div class="player-photo">
                 <img src="membres/kryo.png" alt="Kryo Zine">
+                <div class="element-fixed-badge wind"><i class="fas fa-wind"></i></div>
             </div>
             <div class="player-name">Kryo Zine</div>
-            <div class="player-role">Milieu · Zone</div>
-                        </div>
+            <div class="player-role">
+                Stratégie · Zone
+                <i class="fas fa-wind"></i>
+            </div>
+        </div>
         <div class="player-card empty-slot">
             <div class="empty-icon"><i class="fas fa-user-plus"></i></div>
             <div class="empty-text">Milieu Défensif</div>
@@ -892,9 +896,10 @@
         },
         kryo: {
             name: "Kryo Zine",
-            position: "Milieu Offensif",
+            position: "Meneur de jeu [Remplaçant]",
             number: "07",
-            description: "Milieu de terrain spécialisé dans le contrôle de zone."
+            element: "wind",
+            description: "Surnommé \"Le Silencieux de la Brume\", Kryo est un jeune joueur de 14 ans doté d'un sens stratégique exceptionnel. Malgré son hypersensibilité nerveuse qui rend chaque contact physique douloureux, il compense par une vision du jeu remarquable. Calme et observateur, il analyse le terrain depuis le banc, développant des stratégies qui peuvent changer le cours d'un match. Bien que son corps fragile limite son temps de jeu, son esprit tactique fait de lui un joker précieux pour l'équipe Osiris."
         },
         sora: {
             name: "Sora Akatsuki",
