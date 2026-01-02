@@ -259,6 +259,25 @@
             color: #888;
             font-size: 0.9rem;
             text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Élément icon */
+        .element-icon {
+            width: 20px;
+            height: 20px;
+            margin-left: 5px;
+        }
+        .element-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 35px;
+            height: 35px;
+            z-index: 2;
+            filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
         }
 
         /* Empty Slot */
@@ -381,6 +400,12 @@
             padding: 2rem;
         }
 
+        .modal-element {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 1rem;
+        }
+
         /* Audio Control */
         .audio-control {
             position: fixed;
@@ -496,16 +521,20 @@
             <div class="position-count">1/1</div>
         </div>
         <div class="players-grid">
-            <div class="player-card" data-player="takina">
+            <div class="player-card" data-player="takina" data-element="wind">
                 <div class="card-header">
                     <span class="player-position">Capitaine / Défenseuse</span>
                     <span class="player-number">02</span>
                 </div>
                 <div class="player-photo">
                     <img src="membres/takina.png" alt="Takina">
+                    <img src="img/element_wind.svg" alt="Élément Vent" class="element-badge">
                 </div>
                 <div class="player-name">Takina Minami</div>
-                <div class="player-role">Leader · Défense</div>
+                <div class="player-role">
+                    Leader · Défense
+                    <object data="img/element_wind.svg" type="image/svg+xml" class="element-icon"></object>
+                </div>
             </div>
         </div>
     </div>
@@ -518,16 +547,20 @@
             <div class="position-count">1/X</div>
         </div>
         <div class="players-grid">
-            <div class="player-card" data-player="xin">
+            <div class="player-card" data-player="xin" data-element="wind">
                 <div class="card-header">
                     <span class="player-position">Attaquant</span>
                     <span class="player-number">09</span>
                 </div>
                 <div class="player-photo">
                     <img src="membres/xinzhao.png" alt="Xin Zhao">
+                    <img src="img/element_wind.svg" alt="Élément Vent" class="element-badge">
                 </div>
                 <div class="player-name">Xin Zhao</div>
-                <div class="player-role">Attaque · Vitesse</div>
+                <div class="player-role">
+                    Attaque · Vitesse
+                    <object data="img/element_wind.svg" type="image/svg+xml" class="element-icon"></object>
+                </div>
             </div>
         </div>
     </div>
@@ -540,28 +573,36 @@
             <div class="position-count">2/X</div>
         </div>
         <div class="players-grid">
-            <div class="player-card" data-player="aina">
+            <div class="player-card" data-player="aina" data-element="wind">
                 <div class="card-header">
-                    <span class="player-position">Milieu Offensif</span>
+                    <span class="player-position">Vice-Capitaine / Milieu Offensif</span>
                     <span class="player-number">08</span>
                 </div>
                 <div class="player-photo">
                     <img src="membres/aina.png" alt="Aina">
+                    <img src="img/element_wind.svg" alt="Élément Vent" class="element-badge">
                 </div>
                 <div class="player-name">Aina Lawell</div>
-                <div class="player-role">Milieu · Miximax</div>
+                <div class="player-role">
+                    Vice-Capitaine · Miximax
+                    <object data="img/element_wind.svg" type="image/svg+xml" class="element-icon"></object>
+                </div>
             </div>
 
-            <div class="player-card" data-player="rudeus">
+            <div class="player-card" data-player="rudeus" data-element="wind">
                 <div class="card-header">
                     <span class="player-position">Milieu Offensif</span>
                     <span class="player-number">10</span>
                 </div>
                 <div class="player-photo">
                     <img src="membres/rudeus.png" alt="Rudeus">
+                    <img src="img/element_wind.svg" alt="Élément Vent" class="element-badge">
                 </div>
                 <div class="player-name">Rudeus Greyrat</div>
-                <div class="player-role">Milieu · Offensive</div>
+                <div class="player-role">
+                    Milieu · Offensive
+                    <object data="img/element_wind.svg" type="image/svg+xml" class="element-icon"></object>
+                </div>
             </div>
         </div>
     </div>
@@ -574,19 +615,23 @@
             <div class="position-count">1/1</div>
         </div>
         <div class="players-grid">
-            <div class="player-card" data-player="judie">
-                <div class="card-header">
+            <div class="player-card" data-player="judie" data-element="wind">
+            <div class="card-header">
                     <span class="player-position">Stratège Défensif</span>
                     <span class="player-number">05</span>
-                </div>
-                <div class="player-photo">
-                    <img src="membres/judie.png" alt="Judie">
-                </div>
-                <div class="player-name">Judie Lawell</div>
-                <div class="player-role">Défense · Tactique</div>
             </div>
+            <div class="player-photo">
+                    <img src="membres/judie.png" alt="Judie">
+                    <img src="img/element_wind.svg" alt="Élément Vent" class="element-badge">
+            </div>
+                <div class="player-name">Judie Lawell</div>
+                <div class="player-role">
+                    Défense · Tactique
+                    <object data="img/element_wind.svg" type="image/svg+xml" class="element-icon"></object>
         </div>
-    </div>
+        </div>
+        </div>
+        </div>
 
     <!-- LIBÉRO -->
     <div class="position-section">
@@ -594,21 +639,25 @@
             <div class="position-icon"><i class="fas fa-shield-alt"></i></div>
             <h3 class="position-title">Libéro</h3>
             <div class="position-count">1/1</div>
-        </div>
+    </div>
         <div class="players-grid">
-            <div class="player-card" data-player="akira">
+            <div class="player-card" data-player="akira" data-element="fire">
                 <div class="card-header">
                     <span class="player-position">Libéro</span>
                     <span class="player-number">04</span>
-                </div>
+</div>
                 <div class="player-photo">
                     <img src="membres/akira.webp" alt="Akira">
-                </div>
+                    <img src="img/element_fire.svg" alt="Élément Feu" class="element-badge">
+        </div>
                 <div class="player-name">Akira Katsuki</div>
-                <div class="player-role">Défense · Ombres</div>
-            </div>
+                <div class="player-role">
+                    Défense · Ombres
+                    <object data="img/element_fire.svg" type="image/svg+xml" class="element-icon"></object>
         </div>
     </div>
+</div>
+                        </div>
 
     <!-- GARDIEN -->
     <div class="position-section">
@@ -616,32 +665,39 @@
             <div class="position-icon"><i class="fas fa-hands"></i></div>
             <h3 class="position-title">Gardien</h3>
             <div class="position-count">1/1</div>
-        </div>
+                        </div>
         <div class="players-grid">
-            <div class="player-card" data-player="lucchese">
+            <div class="player-card" data-player="lucchese" data-element="wind">
                 <div class="card-header">
                     <span class="player-position">Gardien</span>
                     <span class="player-number">01</span>
-                </div>
+                    </div>
                 <div class="player-photo">
                     <img src="membres/lucchese.png" alt="Lucchese Aurélio">
-                </div>
+                    <img src="img/element_wind.svg" alt="Élément Vent" class="element-badge">
+                    </div>
                 <div class="player-name">Lucchese Aurélio</div>
-                <div class="player-role">Gardien · Dernier rempart</div>
-            </div>
+                <div class="player-role">
+                    Gardien · Dernier rempart
+                    <object data="img/element_wind.svg" type="image/svg+xml" class="element-icon"></object>
+                    </div>
+                    </div>
         </div>
     </div>
 
     <!-- POSTES VACANTS -->
     <h2 class="section-title">Postes Disponibles</h2>
     <div class="players-grid">
-        <div class="player-card empty-slot">
-            <div class="empty-icon"><i class="fas fa-user-plus"></i></div>
-            <div class="empty-text">Vice-Capitaine</div>
-        </div>
-        <div class="player-card empty-slot">
-            <div class="empty-icon"><i class="fas fa-user-plus"></i></div>
-            <div class="empty-text">Meneur de Jeu</div>
+        <div class="player-card" data-player="kryo">
+            <div class="card-header">
+                <span class="player-position">Milieu Offensif</span>
+                <span class="player-number">07</span>
+            </div>
+            <div class="player-photo">
+                <img src="membres/kryo.png" alt="Kryo Zine">
+            </div>
+            <div class="player-name">Kryo Zine</div>
+            <div class="player-role">Milieu · Zone</div>
         </div>
         <div class="player-card empty-slot">
             <div class="empty-icon"><i class="fas fa-user-plus"></i></div>
@@ -683,7 +739,7 @@
                 card.style.opacity = '1';
                 card.style.transform = 'translateY(0)';
             }, index * 100);
-        });
+    });
 
         // Tentative de lecture automatique de la musique
         tryPlayMusic();
@@ -744,46 +800,71 @@
         takina: {
             name: "Takina Minami",
             position: "Capitaine / Défenseuse",
-            number: "01",
+            number: "02",
+            element: "wind",
             description: "Leader naturelle de l'équipe Osiris. Sa présence sur le terrain inspire confiance et détermination à ses coéquipiers."
         },
         xin: {
             name: "Xin Zhao",
             position: "Attaquant",
             number: "09",
+            element: "wind",
             description: "Attaquant rapide et technique, capable de percer les défenses les plus solides."
         },
         aina: {
             name: "Aina Lawell / Ayato Tanaka",
             position: "Milieu Offensif",
             number: "08",
+            element: "wind",
             description: "Joueur unique possédant les capacités du Miximax, fusionnant deux personnalités en une."
         },
         rudeus: {
             name: "Rudeus Greyrat",
             position: "Milieu Offensif",
             number: "10",
+            element: "wind",
             description: "Milieu créatif avec une vision de jeu exceptionnelle et des techniques magiques."
         },
         judie: {
             name: "Judie Lawell",
             position: "Stratège Défensif",
             number: "05",
+            element: "wind",
             description: "Cerveau tactique de l'équipe, capable d'analyser et de contrer les stratégies adverses."
         },
         akira: {
             name: "Akira Katsuki",
             position: "Libéro",
             number: "04",
+            element: "fire",
             description: "Spécialiste des techniques d'ombre, elle se fond dans le terrain pour intercepter les passes adverses."
         },
         lucchese: {
             name: "Lucchese Aurélio",
             position: "Gardien",
             number: "01",
+            element: "wind",
             description: "Dernier rempart d'Osiris, gardien aux réflexes surhumains et à la détermination inébranlable."
+        },
+        kryo: {
+            name: "Kryo Zine",
+            position: "Milieu Offensif",
+            number: "07",
+            description: "Milieu de terrain spécialisé dans le contrôle de zone."
         }
     };
+
+    // Fonction pour obtenir le nom de l'élément en français
+    function getElementName(elementCode) {
+        const elements = {
+            'fire': 'Feu',
+            'wind': 'Vent',
+            'wood': 'Bois',
+            'earth': 'Terre',
+            'void': 'Néant'
+        };
+        return elements[elementCode] || '';
+    }
 
     // Clic sur les cartes joueurs
     document.querySelectorAll('.player-card[data-player]').forEach(card => {
@@ -793,6 +874,21 @@
 
             if (player) {
                 modalTitle.textContent = player.name;
+
+                // Préparation de l'affichage de l'élément
+                let elementHTML = '';
+                if (player.element) {
+                    const elementName = getElementName(player.element);
+                    elementHTML = `
+                        <div style="text-align: center; margin-bottom: 1rem;">
+                            <object data="img/element_${player.element}.svg" type="image/svg+xml" class="modal-element"></object>
+                            <div style="font-family: var(--font-tech); color: var(--osiris-gold); font-size: 1.2rem;">
+                                Élément: ${elementName}
+                            </div>
+                        </div>
+                    `;
+                }
+
                 modalBody.innerHTML = `
                     <div style="text-align: center; margin-bottom: 2rem;">
                         <div style="font-size: 5rem; color: var(--osiris-gold); margin-bottom: 1rem;">
@@ -802,6 +898,7 @@
                             #${player.number}
                         </div>
                     </div>
+                    ${elementHTML}
                     <div style="background: rgba(255,215,0,0.05); padding: 1.5rem; border-left: 3px solid var(--osiris-gold); margin-bottom: 1.5rem;">
                         <div style="color: #888; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 0.5rem;">Position</div>
                         <div style="font-size: 1.3rem; color: #fff;">${player.position}</div>
