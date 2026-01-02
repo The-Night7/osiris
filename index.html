@@ -557,13 +557,12 @@
                 </div>
                 <div class="player-photo">
                     <img src="membres/takina.png" alt="Takina">
-                    <img src="img/element_wind.svg" alt="Élément Vent" class="element-badge">
                     <div class="element-fixed-badge wind"><i class="fas fa-wind"></i></div>
                 </div>
                 <div class="player-name">Takina Minami</div>
                 <div class="player-role">
                     Leader · Défense
-                    <object data="img/element_wind.svg" type="image/svg+xml" class="element-icon"></object>
+                    <i class="fas fa-wind"></i>
                 </div>
             </div>
         </div>
@@ -584,13 +583,12 @@
                 </div>
                 <div class="player-photo">
                     <img src="membres/xinzhao.png" alt="Xin Zhao">
-                    <img src="img/element_wind.svg" alt="Élément Vent" class="element-badge">
                     <div class="element-fixed-badge wind"><i class="fas fa-wind"></i></div>
                 </div>
                 <div class="player-name">Xin Zhao</div>
                 <div class="player-role">
                     Attaque · Vitesse
-                    <object data="img/element_wind.svg" type="image/svg+xml" class="element-icon"></object>
+                    <i class="fas fa-wind"></i>
                 </div>
             </div>
         </div>
@@ -611,13 +609,12 @@
                 </div>
                 <div class="player-photo">
                     <img src="membres/aina.png" alt="Aina">
-                    <img src="img/element_wind.svg" alt="Élément Vent" class="element-badge">
                     <div class="element-fixed-badge wind"><i class="fas fa-wind"></i></div>
                 </div>
                 <div class="player-name">Aina Lawell</div>
                 <div class="player-role">
                     Vice-Capitaine · Miximax
-                    <object data="img/element_wind.svg" type="image/svg+xml" class="element-icon"></object>
+                    <i class="fas fa-wind"></i>
                 </div>
             </div>
 
@@ -628,13 +625,12 @@
                 </div>
                 <div class="player-photo">
                     <img src="membres/rudeus.png" alt="Rudeus">
-                    <img src="img/element_wind.svg" alt="Élément Vent" class="element-badge">
                     <div class="element-fixed-badge wind"><i class="fas fa-wind"></i></div>
                 </div>
                 <div class="player-name">Rudeus Greyrat</div>
                 <div class="player-role">
                     Milieu · Offensive
-                    <object data="img/element_wind.svg" type="image/svg+xml" class="element-icon"></object>
+                    <i class="fas fa-wind"></i>
                 </div>
             </div>
         </div>
@@ -655,13 +651,12 @@
             </div>
             <div class="player-photo">
                     <img src="membres/judie.png" alt="Judie">
-                    <img src="img/element_wind.svg" alt="Élément Vent" class="element-badge">
                     <div class="element-fixed-badge wind"><i class="fas fa-wind"></i></div>
             </div>
                 <div class="player-name">Judie Lawell</div>
                 <div class="player-role">
                     Défense · Tactique
-                    <object data="img/element_wind.svg" type="image/svg+xml" class="element-icon"></object>
+                    <i class="fas fa-wind"></i>
         </div>
         </div>
         </div>
@@ -682,13 +677,12 @@
 </div>
                 <div class="player-photo">
                     <img src="membres/akira.webp" alt="Akira">
-                    <img src="img/element_fire.svg" alt="Élément Feu" class="element-badge">
                     <div class="element-fixed-badge fire"><i class="fas fa-fire"></i></div>
         </div>
                 <div class="player-name">Akira Katsuki</div>
                 <div class="player-role">
                     Défense · Ombres
-                    <object data="img/element_fire.svg" type="image/svg+xml" class="element-icon"></object>
+                    <i class="fas fa-fire"></i>
         </div>
     </div>
 </div>
@@ -709,13 +703,12 @@
                     </div>
                 <div class="player-photo">
                     <img src="membres/lucchese.png" alt="Lucchese Aurélio">
-                    <img src="img/element_wind.svg" alt="Élément Vent" class="element-badge">
                     <div class="element-fixed-badge wind"><i class="fas fa-wind"></i></div>
                     </div>
                 <div class="player-name">Lucchese Aurélio</div>
                 <div class="player-role">
                     Gardien · Dernier rempart
-                    <object data="img/element_wind.svg" type="image/svg+xml" class="element-icon"></object>
+                    <i class="fas fa-wind"></i>
                     </div>
                     </div>
         </div>
@@ -917,7 +910,9 @@
                     const elementName = getElementName(player.element);
                     elementHTML = `
                         <div style="text-align: center; margin-bottom: 1rem;">
-                            <object data="img/element_${player.element}.svg" type="image/svg+xml" class="modal-element"></object>
+                            <div style="font-size: 3rem; color: var(--osiris-gold);">
+                                <i class="fas fa-${player.element === 'wind' ? 'wind' : 'fire'}"></i>
+                            </div>
                             <div style="font-family: var(--font-tech); color: var(--osiris-gold); font-size: 1.2rem;">
                                 Élément: ${elementName}
                             </div>
