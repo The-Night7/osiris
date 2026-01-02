@@ -281,6 +281,34 @@
             filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
         }
 
+        /* Élément fixe */
+        .element-fixed-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 35px;
+            height: 35px;
+            background: var(--danger-red);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+            font-size: 1.2rem;
+            box-shadow: 0 0 15px rgba(255, 0, 60, 0.5);
+            z-index: 3;
+        }
+
+        .element-fixed-badge.wind {
+            background: var(--hologram-blue);
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.5);
+        }
+
+        .element-fixed-badge.fire {
+            background: var(--danger-red);
+            box-shadow: 0 0 15px rgba(255, 0, 60, 0.5);
+        }
+
         /* Empty Slot */
         .empty-slot {
             background: rgba(20, 20, 20, 0.5);
@@ -530,6 +558,7 @@
                 <div class="player-photo">
                     <img src="membres/takina.png" alt="Takina">
                     <img src="img/element_wind.svg" alt="Élément Vent" class="element-badge">
+                    <div class="element-fixed-badge wind"><i class="fas fa-wind"></i></div>
                 </div>
                 <div class="player-name">Takina Minami</div>
                 <div class="player-role">
@@ -556,6 +585,7 @@
                 <div class="player-photo">
                     <img src="membres/xinzhao.png" alt="Xin Zhao">
                     <img src="img/element_wind.svg" alt="Élément Vent" class="element-badge">
+                    <div class="element-fixed-badge wind"><i class="fas fa-wind"></i></div>
                 </div>
                 <div class="player-name">Xin Zhao</div>
                 <div class="player-role">
@@ -582,6 +612,7 @@
                 <div class="player-photo">
                     <img src="membres/aina.png" alt="Aina">
                     <img src="img/element_wind.svg" alt="Élément Vent" class="element-badge">
+                    <div class="element-fixed-badge wind"><i class="fas fa-wind"></i></div>
                 </div>
                 <div class="player-name">Aina Lawell</div>
                 <div class="player-role">
@@ -598,6 +629,7 @@
                 <div class="player-photo">
                     <img src="membres/rudeus.png" alt="Rudeus">
                     <img src="img/element_wind.svg" alt="Élément Vent" class="element-badge">
+                    <div class="element-fixed-badge wind"><i class="fas fa-wind"></i></div>
                 </div>
                 <div class="player-name">Rudeus Greyrat</div>
                 <div class="player-role">
@@ -624,6 +656,7 @@
             <div class="player-photo">
                     <img src="membres/judie.png" alt="Judie">
                     <img src="img/element_wind.svg" alt="Élément Vent" class="element-badge">
+                    <div class="element-fixed-badge wind"><i class="fas fa-wind"></i></div>
             </div>
                 <div class="player-name">Judie Lawell</div>
                 <div class="player-role">
@@ -650,6 +683,7 @@
                 <div class="player-photo">
                     <img src="membres/akira.webp" alt="Akira">
                     <img src="img/element_fire.svg" alt="Élément Feu" class="element-badge">
+                    <div class="element-fixed-badge fire"><i class="fas fa-fire"></i></div>
         </div>
                 <div class="player-name">Akira Katsuki</div>
                 <div class="player-role">
@@ -676,6 +710,7 @@
                 <div class="player-photo">
                     <img src="membres/lucchese.png" alt="Lucchese Aurélio">
                     <img src="img/element_wind.svg" alt="Élément Vent" class="element-badge">
+                    <div class="element-fixed-badge wind"><i class="fas fa-wind"></i></div>
                     </div>
                 <div class="player-name">Lucchese Aurélio</div>
                 <div class="player-role">
